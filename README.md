@@ -53,8 +53,6 @@ sales-demand-forecasting/
 │   └── verify_project.py     # 10 end-to-end checks (run: python tests/verify_project.py)
 ├── requirements.txt
 ├── README.md
-├── RESUME_BULLETS.md         # Quantified, interview-ready bullet points
-└── INTERVIEW_PREP.md         # Likely interview Q&A for every phase
 ```
 
 > **Why no `src/`?** By design. Analysis lives in notebooks (beginner-friendly and
@@ -157,11 +155,3 @@ out-of-sample + feature importances) · **Anomalies** · **SQL insights**.
 - **Add `Customers` forecasts** as a two-stage model and use it as a feature *carefully*.
 - **Calendar events**: fold in dated holiday lists (e.g., `holidays` package) instead of
   generic `state_holiday` flags.
-
----
-
-## Notes for the reviewer / interviewer
-
-See **`INTERVIEW_PREP.md`** — it walks through the "why" of every decision, likely
-interview questions, and the limitations of each approach. **`RESUME_BULLETS.md`**
-contains quantified, honest bullet points ready to drop into a resume.
