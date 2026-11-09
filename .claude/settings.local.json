@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(pip *)",
+      "PowerShell(python -c \"import pandas, numpy, matplotlib, seaborn, sklearn; print\\('pandas', pandas.__version__\\); print\\('numpy', numpy.__version__\\); print\\('matplotlib', matplotlib.__version__\\); print\\('seaborn', seaborn.__version__\\); print\\('sklearn', sklearn.__version__\\)\")",
+      "PowerShell(python -c \"import jupyter; print\\('jupyter ok'\\)\"; python -m jupyter --version)",
+      "PowerShell(python -c \"import importlib.util as u; [print\\(m, 'YES' if u.find_spec\\(m\\) else 'NO'\\) for m in ['streamlit','statsmodels','scipy','sqlite3']]\")",
+      "PowerShell(python \"C:\\\\Users\\\\mande\\\\AppData\\\\Local\\\\Temp\\\\build_phase1_nb.py\")",
+      "PowerShell(Remove-Item *)",
+      "PowerShell(python \"C:\\\\Users\\\\mande\\\\AppData\\\\Local\\\\Temp\\\\growth_check.py\")",
+      "PowerShell(python -m pip install statsmodels 2>&1 | Select-Object -Last 15)",
+      "PowerShell(python -c \"import statsmodels; print\\('statsmodels', statsmodels.__version__\\); from statsmodels.tsa.statespace.sarimax import SARIMAX; print\\('SARIMAX OK'\\); from statsmodels.graphics.tsaplots import plot_acf, plot_pacf; print\\('ACF/PACF OK'\\)\")",
+      "mcp__ide__executeCode",
+      "PowerShell(python -c \"import json; nb = json.load\\(open\\(r'E:\\\\Data Science\\\\Sales Demand Forecasting and Anomaly Detection\\\\notebooks\\\\07_sql_analysis.ipynb', encoding='utf-8'\\)\\); print\\(f'Cells: {len\\(nb[\\\\\"cells\\\\\"]\\)}'\\); [print\\(f'Cell {i} [{c[\\\\\"cell_type\\\\\"]}]: exec_count={c.get\\(\\\\\"execution_count\\\\\", \\\\\"n/a\\\\\"\\)}'\\) for i, c in enumerate\\(nb['cells']\\)]\")",
+      "PowerShell(python \"E:\\\\Data Science\\\\Sales Demand Forecasting and Anomaly Detection\\\\check_notebook.py\")",
+      "PowerShell(python \"E:\\\\Data Science\\\\Sales Demand Forecasting and Anomaly Detection\\\\check_db.py\")",
+      "PowerShell(python \"E:\\\\Data Science\\\\Sales Demand Forecasting and Anomaly Detection\\\\check_sql.py\")",
+      "PowerShell(python \"E:\\\\Data Science\\\\Sales Demand Forecasting and Anomaly Detection\\\\check_model.py\")",
+      "PowerShell(python -c \"import streamlit, plotly; print\\('streamlit', streamlit.__version__\\); import plotly; print\\('plotly', plotly.__version__\\)\")",
+      "PowerShell(python \"E:\\\\Data Science\\\\Sales Demand Forecasting and Anomaly Detection\\\\probe_mae.py\")",
+      "PowerShell(python \"E:\\\\Data Science\\\\Sales Demand Forecasting and Anomaly Detection\\\\probe_nb.py\")",
+      "PowerShell(python \"E:\\\\Data Science\\\\Sales Demand Forecasting and Anomaly Detection\\\\probe_retrain.py\")",
+      "PowerShell(python \"E:\\\\Data Science\\\\Sales Demand Forecasting and Anomaly Detection\\\\probe_mape.py\")",
+      "PowerShell($nb = Get-Content \"E:\\\\Data Science\\\\Sales Demand Forecasting and Anomaly Detection\\\\notebooks\\\\03_feature_engineering.ipynb\" | ConvertFrom-Json; for \\($i = 0; $i -lt $nb.cells.Count; $i++\\) { $c = $nb.cells[$i]; $src = \\($c.source -join \"\"\\); if \\($src -match \"feature|lag|rolling|cyclical|sin_cos|promo_share|leak\"\\) { Write-Output \"===== CELL $i \\($\\($c.cell_type\\)\\) =====\"; $len = $src.Length; if \\($len -gt 1800\\) { $src.Substring\\(0,1800\\) } else { Write-Output $src } } })",
+      "PowerShell($nb = Get-Content \"E:\\\\Data Science\\\\Sales Demand Forecasting and Anomaly Detection\\\\notebooks\\\\06_anomaly_detection.ipynb\" | ConvertFrom-Json; for \\($i = 0; $i -lt 14; $i++\\) { $c = $nb.cells[$i]; if \\($c.cell_type -eq \"code\"\\) { $src = \\($c.source -join \"\"\\); Write-Output \"===== CODE CELL $i =====\"; if \\($src.Length -gt 2500\\) { $src.Substring\\(0,2500\\) } else { Write-Output $src } } })"
+    ]
+  }
+}
